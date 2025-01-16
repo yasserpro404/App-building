@@ -1,0 +1,98 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f1f1f1;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 360px; /* Légèrement plus large que précédemment */
+    padding: 20px; /* Un peu plus de padding */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Titre */
+h1 {
+    font-size: 22px; /* Agrandissement du titre */
+    text-align: center;
+    margin-bottom: 20px; /* Un peu plus d'espacement sous le titre */
+    color: #333;
+}
+
+/* Style des champs du formulaire */
+.champ {
+    margin-bottom: 15px; /* Un peu plus d'espacement entre les champs */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.champ label {
+    margin-bottom: 0;
+    font-size: 16px; /* Agrandissement du texte du label */
+    width: 35%; /* Augmentation de la largeur du label pour un meilleur équilibre */
+}
+
+.champ input {
+    width: 60%; /* Ajustement de la largeur de l'input pour plus d'espace */
+    padding: 10px; /* Augmentation du padding pour rendre le champ plus spacieux */
+    font-size: 16px; /* Agrandissement du texte de l'input */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    color: #333;
+}
+
+.champ input:focus {
+    border-color: #343534;
+}
+
+/* Style du bouton */
+button {
+    width: 100%;
+    padding: 14px; /* Un peu plus de padding pour le bouton */
+    font-size: 16px; /* Taille du texte du bouton agrandie */
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #04ACC8;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+@media (max-width: 500px) {
+    .login-container {
+        width: 90%; /* Réduit la largeur pour les petits écrans */
+        padding: 15px; /* Un peu moins de padding pour les petits écrans */
+    }
+
+    .champ label {
+        font-size: 14px; /* Taille du label réduite pour les petits écrans */
+        width: 40%; /* Augmentation de la largeur du label sur petits écrans */
+    }
+
+    .champ input {
+        font-size: 14px; /* Taille du texte de l'input réduite pour les petits écrans */
+    }
+
+    button {
+        font-size: 14px; /* Taille du texte du bouton réduite sur petits écrans */
+    }
+}

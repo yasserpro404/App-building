@@ -1,1 +1,110 @@
-<p>register works!</p>
+<div class="login">
+    <div class="login-container">
+      <h1>Inscription</h1>
+      <form name="form" #f="ngForm">
+          
+        <div class="champ">
+          <label for="surname">Prénom</label>
+          <input 
+              id="surname" 
+              type="text" 
+              name="surname" 
+              [(ngModel)]="form.surname" 
+              #surname="ngModel" 
+              placeholder="Entrez votre prénom" 
+              required 
+            />
+            <div *ngIf="surname.invalid && surname.touched" class="error">
+              Le prénom est requis.
+            </div>
+          </div>
+    
+          <div class="champ">
+            <label for="name">Nom</label>
+            <input 
+              id="name" 
+              type="text" 
+              name="name" 
+              [(ngModel)]="form.name" 
+              #name="ngModel" 
+              placeholder="Entrez votre nom" 
+              required 
+            />
+            <div *ngIf="name.invalid && name.touched" class="error">
+              Le nom est requis.
+            </div>
+          </div>
+    
+          <div class="champ">
+            <label for="email">Email</label>
+            <input 
+              id="email" 
+              type="email" 
+              name="email" 
+              [(ngModel)]="form.email" 
+              #email="ngModel" 
+              placeholder="Entrez votre email" 
+              required 
+            />
+            <div *ngIf="email.invalid && email.touched" class="error">
+              Un email valide est requis.
+            </div>
+          </div>
+    
+          <div class="champ">
+            <label for="password">Mot de passe</label>
+            <input 
+              id="password" 
+              type="password" 
+              name="password" 
+              [(ngModel)]="form.password" 
+              #password="ngModel" 
+              placeholder="Entrez votre mot de passe" 
+              required 
+              minlength="6"
+            />
+            <div *ngIf="password.invalid && password.touched" class="error">
+              Le mot de passe doit contenir au moins 6 caractères.
+            </div>
+          </div>
+    
+          <div class="champ">
+            <label for="confirmPassword">Confirmer le mot de passe</label>
+            <input 
+              id="confirmPassword" 
+              type="password" 
+              name="confirmPassword" 
+              [(ngModel)]="form.confirmPassword" 
+              #confirmPassword="ngModel" 
+              placeholder="Confirmez votre mot de passe" 
+              required 
+            />
+            <div *ngIf="confirmPassword.invalid && confirmPassword.touched" class="error">
+              Veuillez confirmer votre mot de passe.
+            </div>
+            <div *ngIf="form.password !== form.confirmPassword && confirmPassword.touched" class="error">
+              Les mots de passe ne correspondent pas.
+            </div>
+          </div>
+    
+          <div class="champ">
+            <label for="userType">Type d'utilisateur</label>
+            <select 
+              id="userType" 
+              name="userType" 
+              [(ngModel)]="form.userRole" 
+              #userType="ngModel" 
+              required
+            >
+              <option value="entreprise">Entreprise</option>
+              <option value="freelance">Freelance</option>
+            </select>
+            <div *ngIf="userType.invalid && userType.touched" class="error">
+              Le type d'utilisateur est requis.
+            </div>
+          </div>
+            <button type="submit" class="btn" [disabled]="!f.valid">S'inscrire</button>
+        </form>
+      </div>
+    </div>
+    

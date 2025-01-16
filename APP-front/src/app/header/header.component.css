@@ -12,6 +12,7 @@
   .app-name {
     font-size: 1.5rem;
     font-weight: bold;
+    text-decoration: none;
   }
   
   .app-logo {
