@@ -1,0 +1,113 @@
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+  
+  .menu-button {
+    display: none;
+  }
+  
+  .app-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .app-logo {
+    height: 40px;
+  }
+  .nav-logo {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .spacer {
+    flex-grow: 1;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 12px
+  }
+  
+  @media (max-width: 768px) {
+    .menu-button {
+      display: block; 
+    }
+  
+    .spacer {
+      flex-grow: 0;
+    }
+  
+    .nav-links {
+      display: none; 
+    }
+  
+    .toolbar {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+  
+    .menu-button {
+      margin-left: 10px; 
+    }
+  
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  }
+  
+  .account-menu {
+    position: relative;
+  }
+  
+  .account-submenu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-top: 3px;
+    padding: 10px;
+    z-index: 10;
+  }
+  
+  .account-menu:hover .account-submenu {
+    display: block;
+  }
+  
+  .nav-links a {
+    display: inline-block;
+    margin-right: 20px;
+    color: black;
+    text-decoration: none;
+  }
+  
+  .account-submenu a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .account-submenu a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .nav-links.active {
+    flex-direction: column;
+    position: absolute;
+    top: 50px;  
+    right: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px;
+    z-index: 10;
+  }
+  

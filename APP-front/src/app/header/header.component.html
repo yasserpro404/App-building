@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="toolbar">
+    <button mat-icon-button class="menu-button" (click)="toggleMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="nav-logo">
+        <img src="assets/logo.png" alt="Logo" class="app-logo">
+        <a routerLink="/" class="app-name">Linky</a>
+    </div>
+    <div class="spacer"></div>
+    <div class="nav-links" [ngClass]="{'active': menuActive}">
+      <div class="account-menu">
+        <a mat-button class="account-button">Mon compte </a>
+        <div class="account-submenu">
+          <a mat-button routerLink="/login">Se connecter</a>
+          <a mat-button routerLink="/register">S'inscrire</a>
+        </div>
+      </div>
+      <a mat-button routerLink="/entreprise">Entreprise</a>
+      <a mat-button routerLink="/freelance">Freelance</a>
+    </div>
+  </mat-toolbar>
+  
